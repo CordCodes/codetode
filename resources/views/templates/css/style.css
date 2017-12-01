@@ -1,3 +1,15 @@
 *{
   font-family: 'Encode Sans Condensed';
 }
+.font-lato{
+  font-family: 'Lato',sans-serif;
+}
+.font-montserrat{
+  font-family: 'Montserrat', sans-serif;
+}
+.font-esc{
+  font-family: 'Encode Sans Condensed', sans-serif;
+}
+.font-mono{
+  font-family: 'Ubuntu Mono', monospace;
+}
