@@ -1,0 +1,153 @@
+body {
+  background-color: #21252b;
+  color: #ffffff;
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  font-family: "Lato", Helvetica, Arial, sans-serif;
+  letter-spacing: 2.12px;
+}
+
+.clear:after {
+  content: "";
+  display: block;
+  height: 0;
+  width: 0;
+  clear: both;
+}
+
+.admin-panel {
+  width: 990px;
+  margin: 50px auto;
+}
+
+.sidebar {
+  width: 20%;
+  min-height: 690px;
+  float: left;
+  border-right: 1px solid #ffffff;
+}
+
+.sidebar .logo {
+  height: 145px;
+  border-bottom: 1px solid #ffffff;
+  background: url("../img/logo.png");
+  background-repeat: no-repeat;
+  width: 200px;
+  height: 200px;
+}
+
+.sidebar ul {
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  list-style: none;
+  margin: 0;
+  position: relative;
+}
+
+.sidebar li:before {
+  content: "";
+  speak: none;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  position: absolute;
+  display: block;
+  line-height: 40px;
+  right: 20px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.sidebar ul a {
+  color: #aaaaaa;
+  text-decoration: none;
+  font: 16px / 40px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #ffffff;
+  display: block;
+  box-shadow: inset 0 1px 0 #ffffff;
+  text-indent: 20px;
+  text-transform: capitalize;
+}
+
+.sidebar li:hover a {
+  background-color: #ffffff;
+  box-shadow: 1px 0 0 #ffffff, inset 5px 0 0 -1px #ea533f;
+}
+
+.main {
+  float: left;
+  width: 79%;
+  height: 690px;
+  background-color: #ffffff;
+  color: #000000;
+  position: relative;
+}
+
+.main-content h4 {
+  line-height: 1;
+  font-size: 18px;
+  margin: 1.3em 0 1em;
+  margin-left: 17px;
+}
+
+.main-content > div {
+  position: absolute;
+  -webkit-transition: opacity 200ms linear;
+  -moz-transition: opacity 200ms linear;
+  -ms-transition: opacity 200ms linear;
+  transition: opacity 200ms linear;
+}
+
+.main-content h2 {
+  margin: 1em 30px;
+  color: #ea533f;
+  font-size: 20px;
+}
+
+.main-content h2:before {
+  content: attr(data-icon);
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  margin-right: 10px;
+  -webkit-font-smoothing: antialiased;
+}
+
+#dashboard > div {
+  border: 1px solid #ebebeb;
+  margin-left: 30px;
+  float: left;
+  border-radius: 5px;
+  min-width: 345px;
+  height: 262px;
+  display: inline-block;
+}
+
+.monitor ul {
+  float: left;
+  padding: 0;
+  margin: 0 31px 0 17px;
+}
+
+.monitor li {
+  list-style: none;
+  font: 600 14 / 28px;
+  color: #666666;
+  text-transform: capitalize;
+  text-decoration: none;
+}
+
+.monitor li a {
+  color: #666666;
+  text-transform: capitalize;
+  text-decoration: none;
+}
+
+.monitor li:first-child {
+  border-bottom: 1px dotted #999999;
+}

@@ -3,11 +3,16 @@ body {
   color: #ffffff;
   font-family: "Lato", Helvetica, Arial, sans-serif;
   letter-spacing: 2.12px;
+  text-align: center;
 }
 
 form {
   border: 3px solid #f1f1f1;
   border-radius: 7px;
+  width: 500px;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 input[type=text], input[type=password] {
@@ -17,6 +22,8 @@ input[type=text], input[type=password] {
   display: inline-block;
   border: 1px solid #cccccc;
   box-sizing: border-box;
+  border-radius: 4px;
+  margin-bottom: 25px;
 }
 
 button {
@@ -27,6 +34,7 @@ button {
   border: none;
   cursor: pointer;
   width: 100%;
+  border-radius: 4px;
 }
 
 button:hover {
@@ -56,6 +64,7 @@ img.avatar {
 span.pass {
   float: right;
   padding-top: 16px;
+  color: #000000;
 }
 
 
