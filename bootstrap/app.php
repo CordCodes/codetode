@@ -12,7 +12,7 @@
   $capsule->addConnection([
     'driver' => 'mysql',
     'host' => 'localhost',
-    'database' => 'cart',
+    'database' => 'codetodecart',
     'username' => 'root',
     'password' => '',
     'charset' => 'utf8',
