@@ -1,0 +1,38 @@
+{% extends 'templates/app.twig' %}
+{% set title = product.title %}
+{% block product %}
+
+  <div class="container">
+    <div class="col-lg-6">
+      <h1 class="font-monserrat">{{ product.title }}</h1><hr>
+      <img src="{{ product.image }}" alt="{{ product.title }} image." class="thumbnail img-responsive">
+      <div class="col-sm-6">
+        <h3 class="font-lato"><button type="button" name="button" class="btn btn-default btn-lg pull-left disabled" style="color:#000;background-color:#f9f9f9;">£{{ product.price | number_format(2) }}</button></h3>
+      </div>
+      <div class="col-sm-6">
+        <h3 class="font-mono"><button type="button" name="button" class="btn btn-warning btn-lg pull-right
+          {% if product.outOfStock() %}
+            disabled
+          {% endif %}
+        ">Add to cart!</button></h3>
+      </div>
+    </div><br><br>
+    <div class="col-lg-6">
+      <h1>Description</h1><br>
+      {% if product.inStock() and not product.hasLowStock() %}
+        <span class="label label-success" style="font-size:15px">In stock!</span>
+      {% endif %}
+      {% if product.hasLowStock() %}
+        <span class="label label-warning" style="font-size:15px">Low in stock!</span>
+      {% endif %}
+      {% if product.outOfStock() %}
+        <span class="label label-danger font-mono" style="font-size:15px">Out of stock!</span>
+      {% endif %}
+      <hr>
+      <p class="font-size-20">
+        {{ product.description }}
+      </p><hr>
+    </div>
+  </div>
+
+{% endblock %}

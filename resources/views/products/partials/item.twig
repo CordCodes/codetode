@@ -1,10 +1,24 @@
 <div class="thumbnail">
   <a href="{{ path_for('product.get', { slug: product.slug }) }}">
-    <img src="{{ product.image }}" alt="{{ product.title }} image.">
+    <img src="{{ product.image }}" alt="{{ product.title }} image." class="product-index-img">
   </a>
   <div class="caption">
     <h4><a href="{{ path_for('product.get', { slug: product.slug }) }}" class="font-montserrat">{{ product.title }}</a></h4>
-    <h4 class="font-mono">£{{ product.price|number_format(2) }}</h4>
-    <p class="font-lato">{{ product.description }}</p>
+    <div><h4 class="font-mono pull-left">£{{ product.price|number_format(2) }}</h4>
+    {% if product.inStock() and not product.hasLowStock() %}
+      <span class="label label-success font-mono pull-right" style="font-size:15px">In stock!</span>
+    {% endif %}
+    {% if product.hasLowStock() %}
+      <span class="label label-warning font-mono pull-right" style="font-size:15px">Low in stock!</span>
+    {% endif %}
+    {% if product.outOfStock() %}
+      <span class="label label-danger font-mono pull-right" style="font-size:15px">Out of stock!</span>
+    {% endif %}</div>
+    <br><br>
+    <p class="font-lato">{{ product.description }}</p><br>
+    <button type="button" name="button" class="btn btn-primary btn-block btn-lg font-mono
+    {% if product.outOfStock() %}
+      disabled
+    {% endif %}">Add To Cart!</button>
   </div>
 </div>

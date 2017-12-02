@@ -1,5 +1,5 @@
 *{
-  font-family: 'Encode Sans Condensed';
+  font-family: 'Encode Sans Condensed',sans-serif;
 }
 .font-lato{
   font-family: 'Lato',sans-serif;
@@ -15,4 +15,11 @@
 }
 body{
   padding-bottom: 100px;
+  padding-top: 95px;
+}
+.product-index-img{
+  min-width: 350px;
+}
+.font-size-20{
+  font-size: 20px;
 }
