@@ -9,8 +9,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
     <title>codeTode&#40;admin&#41;&#59;</title>
-    <link rel="stylesheet" type="text/css" href="css/admin.css">
+    <script type="text/javascript" src="js/canvasjs.min.js"></script>
     <script type="text/javascript" src="js/display.js"></script>
+    <script type="text/javascript" src="js/chart.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/admin.css">
+    <link id="css" rel="stylesheet" type="text/css" href="css/chart.css">
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
   </head>
   <body>
     <div class="admin-panel clear">
@@ -22,6 +26,7 @@
           <li><a onclick="displayDashboard()" class="half-disabled">Dashboard</a></li>
           <li><a onclick="displayPurchases()" class="half-disabled">Purchases</a></li>
           <li><a onclick="displayUsers()" class="half-disabled">Users</a></li>
+          <li><a onclick="displayChart()" class="half-disabled">Sales</a></li>
         </ul>
       </div>
       <div class="main">
@@ -70,6 +75,9 @@
                 </ul>
               </div>
             </div>
+          </div>
+          <div id="chart">
+
           </div>
         </div>
       </div>
