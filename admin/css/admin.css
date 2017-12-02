@@ -154,7 +154,13 @@ a.half-disabled {
   -webkit-font-smoothing: antialiased;
 }
 
-#dashboard, #purchases, #users {
+#dashboard {
+  opacity: 100;
+  width: 1000;
+  height: 1000;
+}
+
+#purchases, #users {
   opacity: 0;
   width: 0;
   height: 0;

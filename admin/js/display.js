@@ -20,7 +20,7 @@ function displayPurchases() {
   var dashboard = document.getElementById('dashboard');
   var purchases = document.getElementById('purchases');
   var users = document.getElementById('users');
-  
+
   dashboard.style.opacity = 0;
   dashboard.style.width = 0;
   dashboard.style.height = 0;
