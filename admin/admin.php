@@ -77,7 +77,8 @@
             </div>
           </div>
           <div id="chart">
-
+            <h2 class="header"><span class="icon"></span>Sales</h2>
+            <div class="monitor" id="chart-monitor"></div>
           </div>
         </div>
       </div>
