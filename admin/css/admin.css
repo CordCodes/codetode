@@ -4,7 +4,7 @@ body {
   padding: 0;
   margin: 0;
   font-size: 16px;
-  font-family: "Lato", Helvetica, Arial, sans-serif;
+  font-family: 'Inconsolata', 'Lato', Helvetica, Arial, sans-serif;
   letter-spacing: 2.12px;
 }
 
@@ -154,24 +154,18 @@ a.half-disabled {
   -webkit-font-smoothing: antialiased;
 }
 
-#dashboard {
-  opacity: 100;
-  width: 1000;
-  height: 1000;
-}
-
-#purchases, #users {
+#dashboard, #purchases, #users, #chart {
   opacity: 0;
   width: 0;
   height: 0;
 }
 
-#dashboard > div, #purchases > div, #users > div {
+#dashboard > div, #purchases > div, #users > div, #chart > div {
   border: 1px solid #ebebeb;
   margin-left: 30px;
   float: left;
   border-radius: 5px;
-  min-width: 500px;
+  min-width: 550px;
   height: 262px;
   display: inline-block;
 }
