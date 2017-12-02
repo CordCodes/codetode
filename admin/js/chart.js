@@ -1,8 +1,5 @@
 window.onload = function () {
-	var chart = new CanvasJS.Chart("chart", {
-		title:{
-			text: "Sales"
-		},
+	var chart = new CanvasJS.Chart("chart-monitor", {
 		data: [
 		{
 			type: "column",
