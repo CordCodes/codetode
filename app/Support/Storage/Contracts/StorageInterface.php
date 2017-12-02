@@ -3,11 +3,11 @@
 
   interface StorageInterface{
     public function all();
-    public function clear($index);
+    public function clear();
     public function exists($index);
     public function get($index);
     public function set($index,$value);
-    public function unset($index);
+    public function remove($index);
   }
 
 ?>

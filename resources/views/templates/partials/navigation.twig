@@ -13,7 +13,13 @@
       </li>
       <li>
           <a href="">
-              Cart <span class="badge" id="comparison-count">0</span>
+              Cart <span class="badge" id="comparison-count">
+              {% if (not basket.productCount == 0) %}
+                {{ basket.productCount }}
+              {% else %}
+                0
+              {% endif %}
+              </span>
           </a>
       </li>
       <li class="dropdown">

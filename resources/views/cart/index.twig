@@ -1,2 +1,7 @@
 {% extends 'templates/app.twig' %}
 {% set title = 'My Cart' %}
+{% block cart %}
+  <div class="container">
+    {{ basket.all | json_encode }}
+  </div>
+{% endblock %}

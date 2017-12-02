@@ -9,10 +9,8 @@
   use Cart\Basket\Basket;
 
   class HomeController{
-    public function index(Request $request, Response $response,Twig $view,Product $product, Router $router, Basket $basket){
+    public function index(Request $request, Response $response,Twig $view,Product $product, Router $router){
       $products = $product->get();
-      var_dump($basket);
-      die();
 
       return $view->render($response, 'home.twig', [
         'products' => $products,
