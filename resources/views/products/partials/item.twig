@@ -1,9 +1,9 @@
 <div class="thumbnail">
-  <a href="#">
+  <a href="{{ path_for('product.get', { slug: product.slug }) }}">
     <img src="{{ product.image }}" alt="{{ product.title }} image.">
   </a>
   <div class="caption">
-    <h4><a href="" class="font-montserrat">{{ product.title }}</a></h4>
+    <h4><a href="{{ path_for('product.get', { slug: product.slug }) }}" class="font-montserrat">{{ product.title }}</a></h4>
     <h4 class="font-mono">£{{ product.price|number_format(2) }}</h4>
     <p class="font-lato">{{ product.description }}</p>
   </div>
