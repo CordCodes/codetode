@@ -13,3 +13,6 @@
 .font-mono{
   font-family: 'Ubuntu Mono', monospace;
 }
+body{
+  padding-bottom: 100px;
+}
