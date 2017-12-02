@@ -4,10 +4,10 @@ window.onload = function () {
 		{
 			type: "column",
 			dataPoints: [
-				{ label: "5 Stickers",  y: 10  },
-				{ label: "10 Stickers", y: 15  },
-				{ label: "20 Stickers", y: 25  },
-				{ label: "Code Mug",  y: 30  }
+				{ label: "5 Stickers",  y: 15  },
+				{ label: "10 Stickers", y: 17  },
+				{ label: "20 Stickers", y: 13  },
+				{ label: "Code Mug",  y: 27  }
 			]
 		}
 		]
