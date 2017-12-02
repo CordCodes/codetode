@@ -8,13 +8,14 @@
   use Slim\Interfaces\RouterInterface;
   use Slim\Views\Twig;
   use Slim\Views\TwigExtension;
+  use Slim\Router;
 
   return [
     RouterInterface::class => function (ContainerInterface $container) { return $container->get('router'); },
     StorageInterface::class => function(ContainerInterface $c){
       return new SessionStorage('cart');
     },
-    Twig::class => function(ContainerInterface $c){
+    Twig::class => function(ContainerInterface $c,Router $router){
       $twig = new Twig(__DIR__ . '/../resources/views',[
         'cache' => false
       ]);
@@ -24,6 +25,7 @@
       ));
 
       $twig->getEnvironment()->addGlobal('basket',$c->get(Basket::class));
+      $twig->getEnvironment()->addGlobal('home',$router->pathFor('home'));
 
       return $twig;
     },
