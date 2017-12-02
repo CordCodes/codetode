@@ -1,3 +1,7 @@
+<?php
+  include('session.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -5,18 +9,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
     <title>codeTode&#40;admin&#41;&#59;</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="css/admin.css">
+    <script type="text/javascript" src="js/display.js"></script>
   </head>
   <body>
     <div class="admin-panel clear">
       <div class="sidebar">
         <div class="logo">
-          <a href="#"></a>
+          <a href="#" class="disabled"></a>
         </div>
         <ul>
-          <li><a href="#dashboard" id="targetted">Dashboard</a></li>
-          <li><a href="#purchases">Purchases</a></li>
-          <li><a href="#users">Users</a></li>
+          <li><a onclick="displayDashboard()" class="half-disabled">Dashboard</a></li>
+          <li><a onclick="displayPurchases()" class="half-disabled">Purchases</a></li>
+          <li><a onclick="displayUsers()" class="half-disabled">Users</a></li>
         </ul>
       </div>
       <div class="main">

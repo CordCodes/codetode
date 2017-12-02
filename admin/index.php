@@ -1,3 +1,10 @@
+<?php
+  include('login_process.php');
+  if(isset($_SESSION['login_user'])) {
+    header("location: admin.php");
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -10,7 +17,7 @@
   <body>
     <div class="login">
       <h2>Login</h2>
-      <form action="php/login_process.php" method="post">
+      <form action="" method="post">
         <div class="imgcontainer">
           <img src="img/img_avatar.png" alt="Avatar" class="avatar">
         </div>
@@ -22,7 +29,7 @@
           <input type="password" placeholder="Password..." name="pass" required>
 
           <button type="submit">Login</button>
-          <input type="checkbox" checked="checked">Remember Me</input>
+          <span><?php echo $error; ?></span>
         </div>
 
         <div class="container" style="background-color:#f1f1f1">
