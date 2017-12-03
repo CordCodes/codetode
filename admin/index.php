@@ -1,10 +1,3 @@
-<?php
-  include('login_process.php');
-  if(isset($_SESSION['login_user'])) {
-    header("location: admin.php");
-  }
-?>
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -29,7 +22,7 @@
           <input type="password" placeholder="Password..." name="pass" required>
 
           <button type="submit">Login</button>
-          <span><?php echo $error; ?></span>
+          <!-- <span><?php echo $error; ?></span> -->
         </div>
 
         <div class="container" style="background-color:#f1f1f1">
