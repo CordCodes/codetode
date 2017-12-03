@@ -2,6 +2,7 @@
   namespace Cart\Controllers;
 
   use Cart\Basket\Basket;
+  use Cart\Basket\Exceptions\QuantityExceededException;
   use Cart\Models\Product;
   use Psr\Http\Message\ResponseInterface as Response;
   use Psr\Http\Message\ServerRequestInterface as Request;
@@ -12,6 +13,7 @@
     protected $basket;
     public function __construct(Basket $basket, Product $product){
       $this->basket = $basket;
+      $this->basket->refresh();
       $this->product = $product;
     }
     public function index(Request $request,Response $response,Twig $view){
@@ -23,11 +25,13 @@
         return $response->withRedirect($router->pathFor('home'));
       }
       try {
-        $this->basket->add($product,$quantity);
+        if ($this->basket->has($product)){
+          $this->basket->add($product,$quantity);
+        }
+        return $response->withRedirect($router->pathFor('cart.index'));
       } catch (QuantityExceededException $e) {
-        die($e);
+        return $response->withRedirect($router->pathFor('home'));
       }
-      return $response->withRedirect($router->pathFor('cart.index'));
     }
   }
 ?>

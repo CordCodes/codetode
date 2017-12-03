@@ -24,6 +24,7 @@
       if (!$this->product->find($product->id)->hasStock($quantity)){
         throw new QuantityExceededException;
       }
+
       if ($quantity===0){
         $this->remove($product);
         return;
@@ -60,6 +61,26 @@
   	}
     public function productCount(){
       return count($this->storage);
+    }
+    public function subTotal(){
+      $total = 0;
+
+      foreach ($this->all() as $item) {
+        if ($item->outOfStock()){
+          continue;
+        }
+        $total = $total + $item->price * $item->quantity;
+      }
+      return $total;
+    }
+    public function refresh(){
+      foreach($this->all() as $item){
+        if ($item->quantity>$item->stock){
+          $this->update($item,$item->stock);
+        } elseif ($item->hasStock(1)&&$item->quantity===0) {
+          $this->update($item,1);
+        }
+      }
     }
   }
 

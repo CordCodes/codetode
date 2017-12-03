@@ -1,0 +1,25 @@
+<table class="table">
+  <tr>
+    <th>Subtotal</th>
+    <td class="font-mono">£{{ basket.subTotal | number_format(2) }}</td>
+    <td><!-- PLACEHOLDER TAG - DO NOT TOUCH --></td>
+  </tr>
+  <tr>
+    <th>Shipping</th>
+    <!--
+      Hardcoded shipping price : 5
+      ##################
+      TODO: Add shipping calculator or insert into database manually
+    -->
+    <td class="font-mono">£0.45</td>
+    <td class="font-mono">+</td>
+  </tr>
+  <tr>
+    <th class="success">Total:</th>
+    <!--
+      (item price)+(shipping price (currently hardcoded))
+    -->
+    <td class="success font-mono">£{{ basket.subTotal + 0.45 | number_format(2)}}</td>
+    <td class="success"><!-- PLACEHOLDER TAG - DO NOT TOUCH --></td>
+  </tr>
+</table>
