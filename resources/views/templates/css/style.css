@@ -20,3 +20,23 @@ body{
 .font-size-20{
   font-size: 20px;
 }
+#cartlist{
+  display: none;
+  animation: fadein 1.5s linear 0s;
+  display: block;
+}
+
+@keyframes fadein {
+  from{
+    opacity: 0;
+  } to{
+    opacity: 100%;
+  }
+}
+@keyframes fadeout {
+  from{
+    opacity: 100%;
+  } to{
+    opacity: 0;
+  }
+}

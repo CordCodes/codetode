@@ -6,24 +6,23 @@
     <div class="col-md-8">
       <h1>Your Cart</h1><br>
       {% if basket.productCount %}
-        <div class="well">
+        <div class="well" id="cartlist">
           <table class="table">
             <thead>
               <tr>
                 <th>Product</th>
                 <th>Price</th>
                 <th>Quantity</th>
-                <th>Total</th>
               </tr>
             </thead>
             <tbody>
               {% for item in basket.all %}
-                {% set totalP = (totalP + item.price) %}
+                {% set totalP = (totalP + (item.price * item.quantity)) %}
                 {% set totalQ = (totalQ + item.quantity) %}
                 {% set sTotal = sTotal + (totalP * totalQ) %}
                 <tr>
                   <td>{{ item.title }}</td>
-                  <td class="font-mono">£{{ item.price | number_format(2) }}</td>
+                  <td class="font-mono">£{{ (item.price * item.quantity) | number_format(2) }}</td>
                   <td>
                     <form action="{{ path_for('cart.update', { slug:item.slug }) }}" method="post">
                       <select class="form-control input-md font-mono" name="quantity">
@@ -37,14 +36,12 @@
                       <button type="submit" class="btn btn-md btn-default pull-right">Update!</button>
                     </form>
                   </td>
-                  <th class="font-mono">£{{ totalP * totalQ | number_format(2) }}</th>
                 </tr>
               {% endfor %}
               <tr>
                 <th>SUBTOTAL:</th>
                 <th class="font-mono">£{{ totalP | number_format(2) }}</th>
                 <th class="font-mono">x{{ totalQ }}</th>
-                <th class="font-mono success">£{{ sTotal | number_format(2) }}</th>
               </tr>
             </tbody>
           </table>
@@ -60,7 +57,7 @@
           <div class="well">
             <h4>Cart Summary</h4>
             {% include 'cart/partials/summary.twig' %}
-            <a href="#"><button class="btn btn-primary btn-block">Checkout</button></a>
+            <a href="{{ path_for('order.index') }}"><button class="btn btn-primary btn-block">Checkout</button></a>
           </div>
         {% endif %}
       </div>
