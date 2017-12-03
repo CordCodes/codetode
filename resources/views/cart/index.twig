@@ -24,7 +24,19 @@
                 <tr>
                   <td>{{ item.title }}</td>
                   <td class="font-mono">£{{ item.price | number_format(2) }}</td>
-                  <td class="font-mono">{{ item.quantity }}</td>
+                  <td>
+                    <form action="{{ path_for('cart.update', { slug:item.slug }) }}" method="post">
+                      <select class="form-control input-md font-mono" name="quantity">
+                        <option value="0">None</option>
+                        {% for number in 1..item.stock %}
+                          {% if number <= 10 %}
+                            <option value="{{ number }}" {% if number == item.quantity %}selected="true"{% endif %}>{{ number }}</option>
+                          {% endif %}
+                        {% endfor %}
+                      </select>
+                      <button type="submit" class="btn btn-md btn-default pull-right">Update!</button>
+                    </form>
+                  </td>
                   <th class="font-mono">£{{ totalP * totalQ | number_format(2) }}</th>
                 </tr>
               {% endfor %}
