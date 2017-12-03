@@ -9,9 +9,19 @@
           if (md5($_POST['pass']) === $passes[$key]){
             header('Location:admin.php');
             $_SESSION['logged'] = 1;
-          } else{}
-        } else{}
+          } else{
+            header('Location:../public');
+          }
+        } else{
+          header('Location:../public');
+        }
+      } else {
+        header('Location:../public');
       }
+    } else {
+      header('Location:../public');
     }
+  }else{
+    header('Location:index.php');
   }
 ?>
