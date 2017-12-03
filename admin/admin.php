@@ -36,7 +36,7 @@
           <li>
             <form action="admin.php" method="post">
               <input type="hidden" name="logout" value="true">
-              <button type="submit">Logout</button>
+              <button type="submit" class="logout">Logout</button>
             </form>
           </li>
         </ul>
