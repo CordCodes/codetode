@@ -1,1 +1,57 @@
 {% extends 'templates/app.twig' %}
+{% set title = 'My Cart' %}
+{% set totalP,totalQ,sTotal = 0,0,0 %}
+{% block cart %}
+  <div class="container">
+    <div class="col-md-8">
+      <h1>Your Cart</h1><br>
+      {% if basket.productCount %}
+        <div class="well">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for item in basket.all %}
+                {% set totalP = (totalP + item.price) %}
+                {% set totalQ = (totalQ + item.quantity) %}
+                {% set sTotal = sTotal + (totalP * totalQ) %}
+                <tr>
+                  <td>{{ item.title }}</td>
+                  <td class="font-mono">£{{ item.price | number_format(2) }}</td>
+                  <td class="font-mono">{{ item.quantity }}</td>
+                  <th class="font-mono">£{{ totalP * totalQ | number_format(2) }}</th>
+                </tr>
+              {% endfor %}
+              <tr>
+                <th>SUBTOTAL:</th>
+                <th class="font-mono">£{{ totalP | number_format(2) }}</th>
+                <th class="font-mono">x{{ totalQ }}</th>
+                <th class="font-mono success">£{{ sTotal | number_format(2) }}</th>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      {% else %}
+        <h4>You have no items in your cart, <a href="{{ home }}">Start shopping</a>!</h4>
+      {% endif %}
+    </div>
+    <div class="col-md-4">
+      <h1>Your Cart</h1><br>
+      <div class="well">
+        {% if basket.productCount and basket.subTotal %}
+          <div class="well">
+            <h4>Cart Summary</h4>
+            {% include 'cart/partials/summary.twig' %}
+            <a href="#"><button class="btn btn-primary btn-block">Checkout</button></a>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+{% endblock %}
