@@ -1,5 +1,11 @@
 <?php
-  // include('session.php');
+  session_start();
+  if (isset($_SESSION['logged'])) {} else{
+    header('Location:index.php');
+  }
+  if (isset($_POST['logout'])) {
+    unset($_SESSION['logged']);
+  }
 ?>
 
 <!DOCTYPE html>
@@ -27,6 +33,12 @@
           <li><a onclick="displayPurchases()" class="half-disabled">Purchases</a></li>
           <li><a onclick="displayUsers()" class="half-disabled">Users</a></li>
           <li><a onclick="displayChart()" class="half-disabled">Sales</a></li>
+          <li>
+            <form action="admin.php" method="post">
+              <input type="hidden" name="logout" value="true">
+              <button type="submit">Logout</button>
+            </form>
+          </li>
         </ul>
       </div>
       <div class="main">

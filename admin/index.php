@@ -10,7 +10,7 @@
   <body>
     <div class="login">
       <h2>Login</h2>
-      <form action="" method="post">
+      <form action="./login_process.php" method="post">
         <div class="imgcontainer">
           <img src="img/img_avatar.png" alt="Avatar" class="avatar">
         </div>
@@ -22,7 +22,7 @@
           <input type="password" placeholder="Password..." name="pass" required>
 
           <button type="submit">Login</button>
-          <!-- <span><?php echo $error; ?></span> --> 
+          <!-- <span><?php echo $error; ?></span> -->
         </div>
 
         <div class="container" style="background-color:#f1f1f1">
