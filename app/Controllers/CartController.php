@@ -39,6 +39,7 @@
   		try {
   			$this->basket->update($product, $request->getParam('quantity'));
   		} catch (QuantityExceededException $e) {
+        die('err');
   		}
   		return $response->withRedirect($router->pathFor('cart.index'));
   	}

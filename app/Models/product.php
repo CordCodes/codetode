@@ -19,7 +19,7 @@
       return (bool)($this->outOfStock()===false);
     }
     public function hasStock($quantity){
-      return (bool)($quantity>=1);
+      return (bool)($quantity>=0);
     }
   }
 

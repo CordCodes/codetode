@@ -20,7 +20,7 @@
   		if (!$this->product->find($product->id)->hasStock($quantity)) {
   			throw new QuantityExceededException;
   		}
-  		if ($quantity == 0) {
+  		if ($quantity < 1) {
   			$this->remove($product);
   			return;
   		}
